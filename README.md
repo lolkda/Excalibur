@@ -39,3 +39,10 @@
 git clone <your-repository-url>
 cd <repository-directory>
 pip install -r requirements.txt
+
+### 3. 安装配置
+
+```bash
+cp env/config.sh.template env/config.sh
+
+编辑 env/config.sh：
