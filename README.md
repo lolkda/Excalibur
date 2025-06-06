@@ -1,4 +1,4 @@
-# 🤖 高性能异步机器人框架 (Python + FastAPI + Telethon)
+# 🤖 高性能异步Chat框架 (Python + FastAPI)
 
 一个基于 **Python、FastAPI 和 Telethon** 构建的高性能、异步、模块化的机器人框架。
 
