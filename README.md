@@ -173,7 +173,7 @@ class MyNewPlugin(BasePlugin):
 ├── env/                  # 环境配置目录
 │   └── config.sh         # 环境变量配置文件
 ├── cache/                # 缓存目录
-├── mainbot.py            # 主程序入口
+├── main.so               # 主程序入口
 ├── start.sh              # 启动脚本
 └── requirements.txt      # Python 依赖
 ```
