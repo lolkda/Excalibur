@@ -44,4 +44,3 @@ pip install -r requirements.txt
 
 ```bash
 cp env/config.sh.template env/config.sh
-```bash
