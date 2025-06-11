@@ -26,7 +26,7 @@
 * Python 3.8 或更高版本
 * bash 环境（用于执行启动脚本）
 
-### 2. 安装与初始化
+### 2. Pull镜像
 
 ```bash
 docker pull chikennice/naibot:latest
