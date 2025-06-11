@@ -82,7 +82,7 @@ export log_level="10" # 默认日志等级
 export splitString="|"
 
 # redis_config
-export Redis_URL="116.205.187.195:6379" # redis链接
+export Redis_URL="" # redis链接
 export Redis_Pwd="" # redis密码
 
 # req_config (必填参数)
