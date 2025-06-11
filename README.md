@@ -27,7 +27,7 @@
 * bash 环境（用于执行启动脚本）
 
 ### 2. 安装与初始化
-## 🔹 拉取 Docker 镜像
+
 ```bash
 docker pull chikennice/naibot:latest
 ```
@@ -35,27 +35,23 @@ docker pull chikennice/naibot:latest
 ### 3. 配置
 
 所有配置存储在 `env/config.sh` 文件中。首次启动前，请根据实际情况修改此文件。
-
-```bash
-cp env/config.sh.template env/config.sh
-```
-
 编辑 `env/config.sh` 文件，填入必要的 API Keys、代理设置、数据库信息等。例如：
 
 ```bash
 # telegram bot api
-export api_id=123456
-export api_hash=xxxxxxxxxxxxxxxxxxxxxxxxxx
-export bot_token=123456789:xxxxxxxxxxxxxxxxxxxxxxxxxx
-
-# 代理
-export proxy_on=true
-export proxy_host=127.0.0.1
-export proxy_port=7890
+export Telethon_user_id="" # user_id
+export Telethon_bot_token="" # 机器人token
+export Telethon_api_id="" # (https://my.telegram.org 在该网站申请到的id)
+export Telethon_api_hash="" # (https://my.telegram.org 在该网站申请到的hash)
+export Telethon_proxy_type="" # socks5 或者 http 或者 MTProxy(MTProxy因为telethon原因暂时不可用)
+export Telethon_proxy_host="" # 代理IP地址例如：192.168.99.100
+export Telethon_proxy_port="" # 代理端口，不需要双引号例如 5890
+export Telethon_proxy_username="" # 代理的username,有则填写
+export Telethon_proxy_password="" # http password
 
 # gemini api
 export gemini_api_key=xxxxxxxxxxxxxxxxxxxxxxxxxx
-export gemini_base_url="https://xxxx/v1"
+export gemini_base_url="https://xxxx/v1beta"
 ```
 
 ### 4. 运行
@@ -63,7 +59,14 @@ export gemini_base_url="https://xxxx/v1"
 执行启动脚本：
 
 ```bash
-bash start.sh
+docker run -dit \
+-p 17841:80 \
+-v /home/docker/NaiBot:/app \
+--name NaiBot \
+--restart always \
+-e TZ=Asia/Shanghai \
+--log-opt max-size=1m \
+chikennice/naibot:latest
 ```
 
 脚本会自动加载环境变量并启动 FastAPI 服务。
