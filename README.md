@@ -34,7 +34,7 @@ docker pull chikennice/naibot:latest
 
 ### 3. 配置
 
-所有配置存储在 `env/config.sh` 文件中。首次启动前，请根据实际情况修改此文件。
+所有配置存储在 `env/config.sh` 文件中。首次启动前，请根据实际情况修改此文件,
 编辑 `env/config.sh` 文件，填入必要的 API Keys、代理设置、数据库信息等。例如：
 
 ```bash
