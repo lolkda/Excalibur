@@ -26,12 +26,10 @@
 * Python 3.8 或更高版本
 * bash 环境（用于执行启动脚本）
 
-### 2. 安装
-
+### 2. 安装与初始化
+## 🔹 拉取 Docker 镜像
 ```bash
-git clone <your-repository-url>
-cd <repository-directory>
-pip install -r requirements.txt
+docker pull chikennice/naibot:latest
 ```
 
 ### 3. 配置
