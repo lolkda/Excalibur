@@ -96,13 +96,13 @@ from adapters import BaseAdapter
 from function.PrintLog import PrintMethodClass
 
 class MyNewAdapter(BaseAdapter["MyNewAdapter"]):
-    name: ClassVar[str] = "my_new_adapter"
-    obj: ClassVar["MyNewAdapter"] = None
+    name: ClassVar[str] = "my_new_adapter" # 适配器名称 (必须实现)
+    obj: ClassVar["MyNewAdapter"] = None # obj (必须实现)
 
     def __init__(self):
         self.log = PrintMethodClass()
 
-    async def start(self):
+    async def start(self): # 适配器初始化 (必须实现)
         self.log.info(f"[{self.name}] 适配器正在启动...")
         # 连接外部服务的逻辑
         self.log.info(f"[{self.name}] 适配器启动成功！")
@@ -131,7 +131,7 @@ from telethon import events, TelegramClient
 from telethon.tl.custom.message import Message
 
 class MyNewPlugin(BasePlugin):
-    plugin_method: str = "我的新插件\n\n使用方法：发送 /mycommand"
+    plugin_method: str = "我的新插件\n\n使用方法：发送 /mycommand" # 必须实现(插件说明或用法)
 
     def __init__(self):
         self.client: TelegramAdapter = TelegramAdapter.obj
@@ -182,13 +182,3 @@ class MyNewPlugin(BasePlugin):
 ## 🤝 贡献
 
 欢迎贡献！如果有新想法或发现问题，请提交 PR 或创建 Issue。
-
-```bash
-git checkout -b feature/AmazingFeature
-git commit -m 'Add some AmazingFeature'
-git push origin feature/AmazingFeature
-```
-
-## 📄 许可证
-
-本项目采用 MIT 许可证。
